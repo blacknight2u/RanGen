@@ -1,0 +1,75 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class RandGen {
+	
+	
+	
+	public static void main(String args[]){
+		Scanner Scanner = new Scanner(System.in);
+		Random Random = new Random();
+	
+		int Number, High=0, Low=0,Guess,Tries,Counter=1,Range,LowTest,HighTest;
+		Boolean Loop=true;
+		
+		
+		
+			
+		System.out.println("Guess the random number");
+		while (Loop==true) {
+			Loop=false;
+		System.out.println("Enter the range High");
+		Range=Scanner.nextInt();
+		System.out.println("Number of tries");
+		Tries=Scanner.nextInt();
+		Number=Random.nextInt(Range)+1;
+		
+		
+		System.out.println("Begin");
+		System.out.println("Low\t High");
+		
+		do{
+			Guess=Scanner.nextInt();
+			Counter++;
+			if (Guess==Number) {
+				System.out.println("Correct!");
+				Counter--;
+				System.out.println("It took you "+Counter+" Tries.");
+				System.out.print("Again?");
+				Loop=Scanner.nextBoolean();
+				
+				break;}
+			else {if (Guess<Number) {Low=Guess;}
+			else {High=Guess;}}
+			System.out.println(Low+"\t"+High);}
+			while (Guess!=Number&&Counter<=Tries);
+		
+		Tries+=1;
+	
+		if (Counter==Tries)	{
+		System.out.println("You used up all tries "+Tries+" :(");
+		HighTest=High-Number; LowTest=Number-High;
+		
+		System.out.print("Your Closest guess was ");
+		if (LowTest<HighTest) {
+			System.out.print(Low);}
+		else
+			System.out.print(High);
+		System.out.println("\tThe number was "+Number);
+		
+		System.out.print("Do you want to try again? ");
+		Loop=Scanner.nextBoolean();
+		if (!Loop) {System.out.println("Goodbye!!!");}
+			}
+		}
+	}
+}
+
+
+
+
+		
+		
+		
+		
