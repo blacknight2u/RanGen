@@ -38,6 +38,7 @@ public class RandGen {
                     System.out.println("It took you "+Counter+" tries.");
                     System.out.print("Again?\t");
                     Loop=Scanner.nextBoolean();
+                    if (!Loop) {System.out.println("Goodbye!!!");}
 
                     break;}
                 else {if (Guess<Number) {Low=Guess;}
@@ -48,7 +49,7 @@ public class RandGen {
             Tries += 1;
 
             if (Counter==Tries)	{
-                System.out.println("You used up all"+Tries+"tries:(");
+                System.out.println("You used up all "+Tries+" tries:(");
                 HighTest=High-Number; LowTest=Number-High;
 
                 System.out.print("Your Closest guess was ");
@@ -65,5 +66,3 @@ public class RandGen {
         }
     }
 }
-
-
