@@ -46,23 +46,26 @@ public class RandGen {
                 System.out.println(Low+"\t"+High);}
             while (Guess!=Number&&Counter<=Tries);
 
-            Tries += 1;
+            Tries++;
 
             if (Counter==Tries)	{
+                Tries--;
                 System.out.println("You used up all "+Tries+" tries:(");
                 HighTest=High-Number; LowTest=Number-High;
 
                 System.out.print("Your Closest guess was ");
                 if (LowTest<HighTest) {
-                    System.out.print(Low);}
+                    System.out.print(Low+".");}
                 else
-                    System.out.print(High);
+                    System.out.print(High+".");
                 System.out.println("\tThe number was "+Number);
 
                 System.out.print("Do you want to try again? ");
                 Loop=Scanner.nextBoolean();
                 if (!Loop) {System.out.println("Goodbye!!!");}
-            }
+        }
         }
     }
 }
+
+
