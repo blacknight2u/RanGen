@@ -14,14 +14,12 @@ public class RandGen {
         Boolean Loop=true;
 
 
-
-
-        System.out.println("Guess the random number");
+        System.out.println("RNG");
         while (Loop==true) {
             Loop=false;
             System.out.println("Enter the range High");
             Range=Scanner.nextInt();
-            System.out.println("Number of tries");
+            System.out.println("# of guesses allowed");
             Tries=Scanner.nextInt();
             Number=Random.nextInt(Range)+1;
 
@@ -39,7 +37,6 @@ public class RandGen {
                     System.out.print("Again?\t");
                     Loop=Scanner.nextBoolean();
                     if (!Loop) {System.out.println("Goodbye!!!");}
-
                     break;}
                 else {if (Guess<Number) {Low=Guess;}
                 else {High=Guess;}}
@@ -50,7 +47,7 @@ public class RandGen {
 
             if (Counter==Tries)	{
                 Tries--;
-                System.out.println("You used up all "+Tries+" tries:(");
+                System.out.println("You used up all "+Tries+" tries :(");
                 HighTest=High-Number; LowTest=Number-High;
 
                 System.out.print("Your Closest guess was ");
@@ -62,10 +59,9 @@ public class RandGen {
 
                 System.out.print("Do you want to try again? ");
                 Loop=Scanner.nextBoolean();
-                if (!Loop) {System.out.println("Goodbye!!!");}
-        }
+                if (!Loop) {System.out.println("Goodbye!!!");
+                }
+            }
         }
     }
 }
-
-
